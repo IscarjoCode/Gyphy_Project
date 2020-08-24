@@ -1,3 +1,13 @@
+  
+
+  $phone: 360px;
+  $tablet: 768px;
+  $desktop: 1366px;
+  $LGdesktop: 1920px;
+
+
+
+
 body{
     background-color: rgb(122, 115, 115);
     color: white;
@@ -5,10 +15,32 @@ body{
 
 main{
 
+
+
   h2{
     font-size: 3em;
     text-align: center;
     padding-top: 40px;
     text-decoration: underline;
   }
+
+  .flex-con{
+    padding-top: 40px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+
+  .form-group input{
+    width: 300px;
+
+  @media screen and (max-width: $tablet){
+      width:  150px;
+      font-size: 12px;
+    }
+  }
+
+
+  
 }

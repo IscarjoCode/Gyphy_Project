@@ -9,4 +9,29 @@ main h2 {
   padding-top: 40px;
   text-decoration: underline;
 }
+
+main .flex-con {
+  padding-top: 40px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+main .form-group input {
+  width: 300px;
+}
+
+@media screen and (max-width: 768px) {
+  main .form-group input {
+    width: 150px;
+    font-size: 12px;
+  }
+}
 /*# sourceMappingURL=styles.css.map */
