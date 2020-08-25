@@ -33,14 +33,34 @@ main{
 
 
   .form-group input{
-    width: 300px;
+    width: 380px;
 
   @media screen and (max-width: $tablet){
       width:  150px;
       font-size: 12px;
     }
+
+  @media screen and (min-width: $LGdesktop){
+    width: 480px;
+  }
+    
+
+  }
+
+  .btn-container{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin-top: 20px;
+
+    button{
+      padding: 15px;
+      border-radius: 7px;
+    }
+
+
   }
 
 
-  
+
 }
