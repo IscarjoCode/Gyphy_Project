@@ -1,14 +1,65 @@
 Body{
     background-color: black;
     color: white;
+}   
+li{
     list-style: none;
+    text-decoration: none;
+    // padding: 20px;
 }
+
+a{
+    text-decoration: none;
+    color: white;
+}
+
 
 .nav-contain{
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+    border-bottom: 4px solid darkgrey;
+    margin-bottom: 20px;
+
+    h1:hover{
+        font-size: 2em;
+    }
 }
 
+.nav-contain-2{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
 
+
+   li{
+        padding: 20px;
+    }
+
+    li:hover{
+        font-size: 1.2em;
+        color: darkgrey;
+    }
+
+}
   
+
+@media screen and (max-width: 500px){
+    .nav-contain-2{
+     flex-direction: column;
+   }
+   .nav-contain-2 li{
+    padding: 5px;
+    text-align: center;
+
+   }
+   .nav-contain{
+       flex-direction: column;
+   }
+   .nav-contain h1{
+        text-align: center;
+        font-size: 2em;
+   }
+
+
+}
