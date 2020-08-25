@@ -3,4 +3,5 @@ xhr.done(function(data) { console.log("success got data", data); });
 
 const api = "YfQo69W7isZ6aYVWbEmOdEpqjnho48fR";
 
-const search = "http://api.giphy.com/v1/gifs/search"
+const search = "http://api.giphy.com/v1/gifs/search" 
+
