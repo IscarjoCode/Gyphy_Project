@@ -1,6 +1,8 @@
+@import url("https://fonts.googleapis.com/css2?family=Russo+One&display=swap");
 Body {
   background-color: black;
   color: white;
+  font-family: 'Russo One', Helvetica, sans-serif;
 }
 
 li {
@@ -74,6 +76,54 @@ a {
   .nav-contain h1 {
     text-align: center;
     font-size: 2em;
+  }
+  h1:hover {
+    font-size: 1.2em;
+  }
+}
+
+.container {
+  max-width: 80%;
+  margin: 0 auto;
+}
+
+.container input {
+  width: 200px;
+  height: 30px;
+}
+
+.container #search-form {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.container .stack {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.wrapIt {
+  margin: 5px;
+}
+
+@media screen and (max-width: 480px) {
+  .wrapIt {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
   }
 }
 /*# sourceMappingURL=styles.css.map */

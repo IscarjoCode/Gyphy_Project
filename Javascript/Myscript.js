@@ -1,50 +1,41 @@
-const searchForm = document.getElementById('search-form');
-const searchInput = document.getElementById('search-input');
- const resultsEl = document.getElementById('ImgContainer');
+$(document).ready(function () {
+    console.log('ready function...')
+    var apikey = "YfQo69W7isZ6aYVWbEmOdEpqjnho48fR";
 
-searchForm.addEventListener('submit', function(e) {
-    e.preventDefault();
-    const q = searchInput.value;
-    search(q)
+    // $('#btn').click(function() {alert ('please work'); });
 
-}) 
+    function getImg() {
+        console.log('getImg function...')
+        $("#ImgContainer").empty();
+        var query = $('#search-input').val();
+        var limit = $('#search-input-2').val();
+        console.log("limit="+limit)
 
-    function search(q) {
+        $.get(`https://api.giphy.com/v1/gifs/search?api_key=YfQo69W7isZ6aYVWbEmOdEpqjnho48fR&q=${query}&limit=${limit}`, function (response) {
+            // console.log('received data...')
+            console.log(`https://api.giphy.com/v1/gifs/search?api_key=YfQo69W7isZ6aYVWbEmOdEpqjnho48fR&q=${query}&limit=${limit}`)
+            // console.log(response.data[1].images.original.url)
+            //Its Pulling Data put not going through the loop properaly
+            // i = 0;
+            // while (i < limit){
+            //     $('#ImgContainer').html("<div><img src='" + response.data[i].images.original.url + "'></div>")
+            //     i++
+            // }
 
-                
-        // Variables to hold search parameters
-        const apikey = "YfQo69W7isZ6aYVWbEmOdEpqjnho48fR";
-        const path = `https://api.giphy.com/v1/gifs/search?api_key=${apikey}&q=${q}`
+            
+             for (i = 0; i < 30; i++) {
+                console.log(response)
+                $('#ImgContainer').append("<span class='wrapIt'><img src='" + response.data[i].images.original.url + "'style ='height:250px; width: 250px; '></span>")
+            }
 
-            fetch(path).then(function(SearchResults) {
-                return SearchResults.json()
-            }).then(function(json) {
-            //   console.log(json.data[0].images.fixed_width.url)
-               
-                let resultsHTML = "";
-                    json.data.forEach(function(obj) {
-                        console.log(obj)
-
-                            const url = obj.images.fixed_width.url
-                            const width = obj.images.fixed_width.width
-                            const height = obj.images.fixed_width.height
-                            const title = obj.title 
-                            
-                                resultsHTML += `<img 
-                                src="${url}"
-                                width="${width}"
-                                height="${height}"
-                                alt="${title}
-                                >
-                                `
-                                console.log(resultsHTML)
-                                 
-                    })
-                    
-
-                    resultsEl.innerHTML = resultsHTML
-            })
-                       
-
+        })
     }
+    $('#btn').click(function () {
 
+        console.log('click function...')
+
+        getImg();
+    })
+
+
+})
